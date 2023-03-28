@@ -50,7 +50,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
 // @desc 		Login a user
 // @route 	/api/users/login
-//@access 	Public
+// @access 	Public
 const loginUser = asyncHandler(async (req, res) => {
 	const { email, password } = req.body;
 	const user = await User.findOne({ email });

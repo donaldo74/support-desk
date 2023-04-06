@@ -12,9 +12,25 @@ function Tickets() {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
+		return () => {
+			if (isSuccess) {
+				dispatch(reset())
+			}
+		}
+	}, [dispatch, isSuccess])
+
+	useEffect(() => {
 		dispatch(getTickets())
 	}, [dispatch])
-	return <div>Tickets</div>
+
+	if (isLoading) {
+		return <Spinner />
+	}
+	return (
+		<div>
+			<h1>Tickets</h1>
+		</div>
+	)
 }
 
 export default Tickets

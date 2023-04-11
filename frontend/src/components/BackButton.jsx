@@ -8,3 +8,5 @@ export const BackButton = ({ url }) => {
 		</Link>
 	)
 }
+
+export default BackButton
